@@ -19,7 +19,7 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get('/api/products/', (req, res) => {
+app.get('/api/products/', (req, res, next) => {
   const sql = `
     select "productId",
             "name",
@@ -32,9 +32,9 @@ app.get('/api/products/', (req, res) => {
     .then(result => {
       res.json(result.rows);
     })
-    .catch(err => {
-      console.error(err);
-    });
+    .catch(err =>
+      next(err)
+    );
 });
 
 app.use('/api', (req, res, next) => {
