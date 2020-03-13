@@ -18,5 +18,3 @@ class ProductListItem extends React.Component {
 }
 
 export default ProductListItem;
-
-// key = { this.props.productItem.productId }
