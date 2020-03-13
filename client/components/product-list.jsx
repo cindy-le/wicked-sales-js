@@ -10,7 +10,7 @@ class ProductList extends React.Component {
     this.getProducts = this.getProducts.bind(this);
   }
 
-  comopnentDidMount() {
+  componentDidMount() {
     this.getProducts();
   }
 
